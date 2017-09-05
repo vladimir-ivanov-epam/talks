@@ -3,6 +3,7 @@ import {View} from "react-native";
 
 import Logo from "./Logo";
 import LoginInputs from "./LoginInputs";
+import {Button} from "react-native-elements";
 
 class LoginScreen extends Component {
 
@@ -13,6 +14,10 @@ class LoginScreen extends Component {
     changePassword = (password) => {
         this.setState({ 'password': password });
     };
+
+    doLogin = () => {
+
+    }
 
     render() {
         const {container} = styles;
@@ -25,6 +30,12 @@ class LoginScreen extends Component {
                 <LoginInputs
                     onChangeLogin={(login) => this.changeLogin(login)}
                     onChangePassword={(password) => this.changePassword(password)}
+                />
+                <Button
+                    raised
+                    title='LOGIN'
+                    backgroundColor="#00F"
+                    onPress={this.doLogin}
                 />
             </View>
         )
