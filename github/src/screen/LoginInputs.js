@@ -3,19 +3,19 @@ import React from 'react';
 import { FormInput } from 'react-native-elements';
 import {View} from "react-native";
 
-export default LoginInputs = ({ onChangeValue }) => (
+export default LoginInputs = ({ onChangeLogin, onChangePassword }) => (
     <View style={{ margin: 16 }}>
         <FormInput
             placeholder='login'
             onChangeText={(value) => {
-                onChangeValue('login', value);
+                onChangeLogin(value);
             }}
         />
         <FormInput
             secureTextEntry
             placeholder='password'
             onChangeText={(value) => {
-                onChangeValue('password', value);
+                onChangePassword(value);
             }}
         />
     </View>

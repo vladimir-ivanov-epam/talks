@@ -6,13 +6,26 @@ import LoginInputs from "./LoginInputs";
 
 class LoginScreen extends Component {
 
+    changeLogin = (login) => {
+        this.setState({ 'login': login });
+    };
+
+    changePassword = (password) => {
+        this.setState({ 'password': password });
+    };
+
     render() {
         const {container} = styles;
+
+        console.log("[LoginScreen] state = " + JSON.stringify(this.state));
 
         return (
             <View style={container}>
                 <Logo />
-                <LoginInputs onChangeValue={() => {}}/>
+                <LoginInputs
+                    onChangeLogin={(login) => this.changeLogin(login)}
+                    onChangePassword={(password) => this.changePassword(password)}
+                />
             </View>
         )
     }
